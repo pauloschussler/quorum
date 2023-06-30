@@ -18,8 +18,10 @@ legislators_csv = read_csv_file(csv_file_paths[1])
 vote_result_csv = read_csv_file(csv_file_paths[2])
 votes_csv = read_csv_file(csv_file_paths[3])
 
+# Receive data filtered
 legislators_support_oppose_count = legislators_support_oppose(legislators_csv, vote_result_csv)
 bills_support_oppose_count = bills_support_oppose(bills_csv, legislators_csv, vote_result_csv, votes_csv)
 
+# Write csv files
 write_csv_file('./csv_results/legislators-support-oppose-count.csv', legislators_support_oppose_count)
 write_csv_file('./csv_results/bills.csv', bills_support_oppose_count)
